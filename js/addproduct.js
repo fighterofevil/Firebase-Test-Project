@@ -40,8 +40,9 @@ function addProduct(){
 	var prodRef=myRef.child('products');
 
 	// passes onject to Firebase to save
-	prodRef.set({
-		name: itemName,
+	// prodRef.child(itemName).set({
+	prodRef.push({
+		name:itemName,
 		description: itemDescription,
 		price: itemPrice,
 		image: baseImg
