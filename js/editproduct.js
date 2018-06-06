@@ -8,7 +8,7 @@ var oneProduct = {};
 
 
 // fireebase method
-prodRef.child(prodID),once('value', function(snapshot){
+prodRef.child(prodID).once('value', function(snapshot){
 	oneProduct = snapshot.val();
 
 	name = oneProduct.name;
