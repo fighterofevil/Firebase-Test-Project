@@ -2,13 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "js"
-		},
-		{
-			"path": "sass"
-		},
-		{
-			"path": "css"
+			"path": "."
 		}
 	]
 }
