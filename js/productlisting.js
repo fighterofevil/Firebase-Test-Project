@@ -1,5 +1,27 @@
 var theRef= new Firebase('https://demoapp-984c6.firebaseio.com/products');
 
+function editProd(id){
+	//unsecure method of passing data as stated in demo.  this is done as a hack workaround since there is no feature set such as routing. 
+	window.name=id;
+	location.assign('editproduct.html');
+}
+
+function onComplete(error){
+	if (error) {
+		alert('Delete failed!');
+	} else {
+		// alert('Delete product');
+		location.reload(true);
+	}
+}
+
+function deleteProd(id){
+	if(confirm('Are you sure you want to delete!?')==true){
+		// firebase call
+		theRef.child(id).remove(onComplete);
+	}
+}
+
 var prodData={};
 
 theRef.on('value',function(snap){
