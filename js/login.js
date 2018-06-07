@@ -67,6 +67,8 @@ function loginUser() {
     );
 }
 
+
+
 $('#loginButton').click(loginUser);
 $('#registerButton').click(registerUser);
 $('#cancelButton').click(cancelLogin);
