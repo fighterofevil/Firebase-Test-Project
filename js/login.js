@@ -1,0 +1,74 @@
+// function cancelLogin(){
+// 	location.assign('index.html');
+// }
+
+// function registerUser(){
+// 	location.assign('register.html');
+// }
+
+// function onComplete(error, authData){
+// 	if (error) {
+// 		alert('Login Failed! ', error);
+// 	} else {
+// 		alert('User logged in');
+// 		location.assign('index.html');
+// 	}
+// }
+
+// function loginUser() {
+// 	var emailAccount = $('#emailAddress').val();
+// 	var password = $('#password').val();
+
+// 	var ref= new Firebase('https://demoapp-984c6.firebaseio.com/products');
+
+// 	// Firebase reference
+// 	ref.authWithPassword({
+// 		email: emailAccount,
+// 		password: password 	
+// 	},
+// 		onComplete
+// 	);
+// }
+
+// $('#loginButton').click(loginUser);
+// $('#registerButton').click(registerUser);
+// $('#cancelButton').click(cancelLogin);
+
+
+function cancelLogin() {
+    location.assign('index.html');
+}
+
+function registerUser() {
+    location.assign('register.html');
+}
+
+function onComplete (error, authData) {
+    if (error) {
+    alert('Login Failed! ', error);
+  } else {
+    alert('User logged in');
+    location.assign('index.html');
+  }
+}
+
+function loginUser() {
+    var emailAccount = $('#emailAddress').val();
+    var passwrd = $('#password').val();
+    
+	var ref= new Firebase('https://demoapp-984c6.firebaseio.com/products');
+    
+    ref.authWithPassword({
+        email: emailAccount,
+        password: passwrd
+    
+    },
+        onComplete
+    );
+}
+
+$('#loginButton').click(loginUser);
+$('#registerButton').click(registerUser);
+$('#cancelButton').click(cancelLogin);
+
+
